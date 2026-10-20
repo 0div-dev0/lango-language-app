@@ -1,0 +1,6 @@
+node_modules
+.next
+.git
+.manus-logs
+*.min.js
+*.min.css

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="cyanGlow" cx="72%" cy="25%" r="46%">
+      <stop offset="0%" stop-color="#3aa0d4" stop-opacity=".45"/>
+      <stop offset="55%" stop-color="#2b6b96" stop-opacity=".15"/>
+      <stop offset="100%" stop-color="#090b10" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="violetGlow" cx="87%" cy="74%" r="42%">
+      <stop offset="0%" stop-color="#8b7cf0" stop-opacity=".26"/>
+      <stop offset="100%" stop-color="#090b10" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="waveCyan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7fd8f5" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#7fd8f5" stop-opacity=".85"/>
+      <stop offset="100%" stop-color="#7fd8f5" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="waveViolet" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a89bf0" stop-opacity="0"/>
+      <stop offset="55%" stop-color="#a89bf0" stop-opacity=".7"/>
+      <stop offset="100%" stop-color="#a89bf0" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="waveLime" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d7f35b" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#d7f35b" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#d7f35b" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft" x="-10%" y="-30%" width="120%" height="160%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="softDot" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="#090b10"/>
+  <rect width="1600" height="900" fill="url(#cyanGlow)"/>
+  <rect width="1600" height="900" fill="url(#violetGlow)"/>
+
+  <!-- soft aurora ribbons (blurred glow layer) -->
+  <g fill="none" filter="url(#soft)" opacity=".5">
+    <path d="M-100 520 C 300 400, 560 640, 900 500 S 1400 330, 1700 420" stroke="#3aa0d4" stroke-width="46" stroke-opacity=".35"/>
+    <path d="M-100 640 C 340 560, 640 760, 980 620 S 1420 480, 1700 560" stroke="#8b7cf0" stroke-width="38" stroke-opacity=".28"/>
+  </g>
+
+  <!-- luminous language-signal waves -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M-60 500 C 320 390, 560 620, 900 480 S 1420 320, 1720 400" stroke="url(#waveCyan)" stroke-width="2.6"/>
+    <path d="M-60 560 C 350 460, 620 680, 950 540 S 1440 390, 1720 470" stroke="url(#waveViolet)" stroke-width="2"/>
+    <path d="M-60 620 C 300 540, 600 740, 960 600 S 1430 460, 1720 540" stroke="url(#waveCyan)" stroke-width="1.4" stroke-opacity=".7"/>
+    <path d="M-60 460 C 380 360, 640 560, 980 420 S 1400 280, 1720 350" stroke="url(#waveViolet)" stroke-width="1.2" stroke-opacity=".55"/>
+    <path d="M-60 690 C 320 620, 660 810, 1000 670 S 1460 540, 1720 610" stroke="url(#waveLime)" stroke-width="1.6"/>
+  </g>
+
+  <!-- signal nodes on the waves -->
+  <g fill="#7fd8f5">
+    <circle cx="900" cy="480" r="4"/>
+    <circle cx="1210" cy="418" r="3"/>
+    <circle cx="560" cy="556" r="3" fill-opacity=".8"/>
+  </g>
+  <circle cx="900" cy="480" r="9" fill="#7fd8f5" opacity=".45" filter="url(#softDot)"/>
+  <g fill="#d7f35b">
+    <circle cx="1000" cy="668" r="3.5"/>
+    <circle cx="1330" cy="588" r="2.5" fill-opacity=".8"/>
+  </g>
+  <circle cx="1000" cy="668" r="8" fill="#d7f35b" opacity=".4" filter="url(#softDot)"/>
+
+  <!-- concentric signal arcs, upper right (echo of the lingo mark) -->
+  <g fill="none" stroke="#ffffff" stroke-opacity=".08" stroke-width="1.5">
+    <circle cx="1430" cy="170" r="90"/>
+    <circle cx="1430" cy="170" r="140"/>
+    <circle cx="1430" cy="170" r="195"/>
+  </g>
+  <path d="M1520 170A90 90 0 1 0 1430 260" fill="none" stroke="#7fd8f5" stroke-opacity=".5" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- sparse particles -->
+  <g fill="#ffffff">
+    <circle cx="1120" cy="140" r="1.6" fill-opacity=".5"/>
+    <circle cx="1290" cy="260" r="1.2" fill-opacity=".35"/>
+    <circle cx="1500" cy="380" r="1.4" fill-opacity=".4"/>
+    <circle cx="760" cy="250" r="1.2" fill-opacity=".3"/>
+    <circle cx="1215" cy="700" r="1.4" fill-opacity=".35"/>
+    <circle cx="1420" cy="620" r="1.2" fill-opacity=".3"/>
+    <circle cx="905" cy="160" r="1.2" fill-opacity=".3"/>
+  </g>
+</svg>

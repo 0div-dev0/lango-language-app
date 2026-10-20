@@ -1,0 +1,131 @@
+/* Midnight Atlas global system: ink-dark surfaces, editorial type scale, signal-lime interaction, and restrained motion. */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+:root {
+  --background: oklch(0.055 0.012 260);
+  --foreground: oklch(0.96 0.01 100);
+  --card: oklch(0.1 0.015 255);
+  --card-foreground: oklch(0.96 0.01 100);
+  --popover: oklch(0.1 0.015 255);
+  --popover-foreground: oklch(0.96 0.01 100);
+  --primary: oklch(0.91 0.2 112);
+  --primary-foreground: oklch(0.12 0.02 255);
+  --secondary: oklch(0.16 0.02 255);
+  --secondary-foreground: oklch(0.8 0.01 100);
+  --muted: oklch(0.16 0.02 255);
+  --muted-foreground: oklch(0.62 0.02 255);
+  --accent: oklch(0.16 0.02 255);
+  --accent-foreground: oklch(0.96 0.01 100);
+  --destructive: oklch(0.65 0.2 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.91 0.2 112);
+}
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "DM Sans", sans-serif;
+  }
+  button,
+  a {
+    cursor: pointer;
+  }
+  button {
+    transition:
+      scale 160ms cubic-bezier(0.23, 1, 0.32, 1),
+      color 180ms ease,
+      background-color 180ms ease,
+      border-color 180ms ease;
+  }
+  button:active {
+    scale: 0.97;
+  }
+}
+@layer components {
+  .font-display {
+    font-family: "Space Grotesk", sans-serif;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.36);
+  }
+  .section-title {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2.75rem, 5vw, 5rem);
+    font-weight: 700;
+    letter-spacing: -0.075em;
+    line-height: 0.94;
+  }
+  .section-title span {
+    color: rgba(255, 255, 255, 0.38);
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(-4deg);
+  }
+}
+.animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
